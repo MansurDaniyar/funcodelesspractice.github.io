@@ -1,0 +1,51 @@
+@primary-color: rgb(85, 0, 255);
+
+.button(@bg-color, @text-color, @padding: 15px) {
+    background-color: @bg-color;
+    color: @text-color;
+    margin: 10px;
+    padding: @padding 20px;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    &:hover {
+        background-color: lighten(@bg-color, 20%);
+        cursor: pointer;
+    }
+}
+
+.primary-button {
+    .button(#247b21, white, 15px)
+}
+
+.secondary-button {
+    .button(#ff0000, rgb(255, 238, 0), 15px)
+}
+
+.third-button {
+    .button(#1500ff, rgb(34, 255, 0), 15px)
+}
+
+.card(@bg-color) {
+    background-color: @bg-color;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    padding: 16px;
+    text-align: center;
+    transition: background-color 0.3s;
+
+    &:hover {
+        background-color: darken(@bg-color, 20%);
+        cursor: pointer;
+    }
+}
+
+.card_first, .card_third {
+    .card(rgb(255, 128, 0))
+}
+
+.card_second {
+    .card(@primary-color)
+}
